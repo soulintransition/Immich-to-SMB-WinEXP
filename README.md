@@ -5,7 +5,7 @@
 
 *Use Ctrl+F to navigate:*  
 Requirements:  
-Guide:  
+Guide:
 - Final screen
 
 Possible issues/debug  
