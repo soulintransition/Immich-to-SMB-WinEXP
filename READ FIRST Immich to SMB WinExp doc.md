@@ -78,6 +78,7 @@ Target \= "C:\\Program Files\\AutoHotkey\\v1.1.37.02\\AutoHotkeyU64.exe" C:\\Use
 Start in \= “C:\\Users\\\_\_\_\_\\Documents\\AutoHotkey”
 
 **AHK script (ImmichSelect.ahk)**  
+
 ; Immich → Explorer selector  
 ; Hotkey: Ctrl \+ Alt \+ I
 
