@@ -4,12 +4,12 @@
 # Menu:
 
 *Use Ctrl+F to navigate:*  
-Requirements:  
-Guide:  
+**Requirements**:  
+**Guide**:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Final screen  
-Possible issues/debug:  
-Integration details:  
-Example working code:
+**Possible issues/debug**:  
+**Integration details**:  
+**Example working code**:
 
 # Requirements
 
