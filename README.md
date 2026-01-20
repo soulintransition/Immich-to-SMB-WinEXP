@@ -5,10 +5,15 @@
 
 *Use Ctrl+F to navigate:*  
 Requirements:
+
 Guide:
+
 	Final screen
+
 Possible issues/debug
+
 Integration details
+
 Example working code:
 
 # Requirements
