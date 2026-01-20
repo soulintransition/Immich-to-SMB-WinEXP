@@ -19,7 +19,7 @@ Possible issues/debug
 
 There’s a good reason why I told you to read the docs first. In order for the seamless functionality of this shortcut to work, you will **need** an API key. (Not to worry, if the command line tool works, and your URL is highlighted but nothing happens, you can add this now)  
 Before you install the software, navigate to your Immich server and click first your user icon, and then account settings:  
-<img width="585" height="461" alt="image" src="https://github.com/user-attachments/assets/d8268e53-0998-4598-b24f-21fa14bee8bb" />
+<img width="333" height="270" alt="image" src="https://github.com/user-attachments/assets/1dec1d87-8dd9-4af4-b5e5-41c9bfb4eb8c" />
 
 Click New API Key (3 rows from the top):  
 <img width="863" height="483" alt="image" src="https://github.com/user-attachments/assets/2d929103-c9cd-4cb3-b8df-7e4729a8f8b1" />
