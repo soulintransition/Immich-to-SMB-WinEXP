@@ -40,6 +40,7 @@ Create a new User Environment Variable IMMICH\_FE\_API\_KEY (exactly that, I alr
 
 Then click OK at the bottom of the window again.  
 <img width="776" height="406" alt="image" src="https://github.com/user-attachments/assets/01bafe89-0171-449c-9a2c-738d2d9a374e" />
+
 Now you’re finished with setting up the environment variable. Download the install files and move them to your user folder, or a different working directory (folder) if you’re feeling adventurous. 
 
 The default user folder (C:\\Users\\*NAME*) is the only one I’ve tested it on. You won’t be able to change the directory of the final code without breaking and or manually modifying both final scripts. 
