@@ -90,14 +90,14 @@ Target
 
 ```
 
-"C:\\Program Files\AutoHotkey\v1.1.37.02\AutoHotkeyU64.exe" C:\Users\\_\_\_\_\\Documents\\AutoHotkey\\ImmichSelect.ahk
+"C:\Program Files\AutoHotkey\v1.1.37.02\AutoHotkeyU64.exe" C:\Users\____\Documents\AutoHotkey\ImmichSelect.ahk
 
 ```
 Start in 
 
 ```
 
-“C:\\Users\\\_\_\_\_\\Documents\\AutoHotkey”
+“C:\Users\____\Documents\AutoHotkey”
 
 ```
 
