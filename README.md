@@ -34,7 +34,8 @@ Go to Environment Variables via the Windows key or some other method.
 <img width="585" height="461" alt="image" src="https://github.com/user-attachments/assets/639bf839-4bb1-447d-b34b-7121c30d4abb" />
 
 *Environment variables are not stored at the file level (\*.py) and therefore slightly more secure against scrapers.*  
-Create a new User Environment Variable IMMICH\_FE\_API\_KEY (exactly that, I already have it), and paste the key. The name is important because it is hard-coded into the script: 
+Create a new User Environment Variable IMMICH\_FE\_API\_KEY (exactly that, I already have it), and paste the key. The name is important because it is hard-coded into the script:
+
 <img width="738" height="222" alt="image" src="https://github.com/user-attachments/assets/705f5f74-c9ac-4eed-91cb-9cba3fa095b4" />
 
 Then click OK at the bottom of the window again.  
