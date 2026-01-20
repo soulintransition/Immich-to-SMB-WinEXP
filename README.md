@@ -19,18 +19,25 @@ Possible issues/debug
 
 There’s a good reason why I told you to read the docs first. In order for the seamless functionality of this shortcut to work, you will **need** an API key. (Not to worry, if the command line tool works, and your URL is highlighted but nothing happens, you can add this now)  
 Before you install the software, navigate to your Immich server and click first your user icon, and then account settings:  
-![][image1]  
+<img width="585" height="461" alt="image" src="https://github.com/user-attachments/assets/d8268e53-0998-4598-b24f-21fa14bee8bb" />
+
 Click New API Key (3 rows from the top):  
-![][image2]  
+<img width="863" height="483" alt="image" src="https://github.com/user-attachments/assets/2d929103-c9cd-4cb3-b8df-7e4729a8f8b1" />
+
 Click asset.read. This is critical for technical reasons described below:   
- ![][image3]  
+<img width="1027" height="721" alt="image" src="https://github.com/user-attachments/assets/17f99364-d857-4bb8-b4f3-c2939f265afa" />
+
 *The shortcut is wired to start with a URL for long-term compatibility purposes, and the URL only contains a random string of text (UUID). The software can’t mind-read, so it needs the read authorization assigned to its key so it can ask for Immich’s filepath. Without a key, this is a CLI only tool.*  
-When you receive your API key, **copy** using your cursor, the Copy to Clipboard feature, **AND** a reliable phone camera. This is the only time your key will be available. Some features don’t work over http, so better safe than sorry.![][image4]                 Go to Environment Variables via the Windows key or some other method. ![][image5]  
+When you receive your API key, **copy** using your cursor, the Copy to Clipboard feature, **AND** a reliable phone camera. This is the only time your key will be available. Some features don’t work over http, so better safe than sorry. <img width="2048" height="1536" alt="image" src="https://github.com/user-attachments/assets/5895fd83-3357-49f1-bbcf-8759e8c58a30" />
+Go to Environment Variables via the Windows key or some other method.
+<img width="585" height="461" alt="image" src="https://github.com/user-attachments/assets/639bf839-4bb1-447d-b34b-7121c30d4abb" />
+
 *Environment variables are not stored at the file level (\*.py) and therefore slightly more secure against scrapers.*  
-Create a new User Environment Variable IMMICH\_FE\_API\_KEY (exactly that, I already have it), and paste the key. The name is important because it is hard-coded into the script:  
-![][image6]  
-![][image7]  
+Create a new User Environment Variable IMMICH\_FE\_API\_KEY (exactly that, I already have it), and paste the key. The name is important because it is hard-coded into the script: 
+<img width="738" height="222" alt="image" src="https://github.com/user-attachments/assets/705f5f74-c9ac-4eed-91cb-9cba3fa095b4" />
+
 Then click OK at the bottom of the window again.  
+<img width="776" height="406" alt="image" src="https://github.com/user-attachments/assets/01bafe89-0171-449c-9a2c-738d2d9a374e" />
 Now you’re finished with setting up the environment variable. Download the install files and move them to your user folder, or a different working directory (folder) if you’re feeling adventurous. 
 
 The default user folder (C:\\Users\\*NAME*) is the only one I’ve tested it on. You won’t be able to change the directory of the final code without breaking and or manually modifying both final scripts. 
@@ -49,7 +56,7 @@ If you **already have** Auto Hotkey installed, you will likely have v2 installed
 
 To enable the hotkey on **login**, your command prompt will tell you to simply enter the powershell command into the command prompt (I didn’t bother going through the whole process again). **Do not** use an actual powershell window. The text of the powershell command is the same, however.
 
-Read the prompts in your command prompt window carefully and you’ll probably be fine.  
+Read the prompts in **your** command prompt window carefully and you’ll probably be fine.  
 ![][image8]
 
 # Possible issues
