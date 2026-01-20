@@ -28,7 +28,8 @@ Click asset.read. This is critical for technical reasons described below:
 <img width="1027" height="721" alt="image" src="https://github.com/user-attachments/assets/17f99364-d857-4bb8-b4f3-c2939f265afa" />
 
 *The shortcut is wired to start with a URL for long-term compatibility purposes, and the URL only contains a random string of text (UUID). The software can’t mind-read, so it needs the read authorization assigned to its key so it can ask for Immich’s filepath. Without a key, this is a CLI only tool.*  
-When you receive your API key, **copy** using your cursor, the Copy to Clipboard feature, **AND** a reliable phone camera. This is the only time your key will be available. Some features don’t work over http, so better safe than sorry. <img width="2048" height="1536" alt="image" src="https://github.com/user-attachments/assets/5895fd83-3357-49f1-bbcf-8759e8c58a30" />
+When you receive your API key, **copy** using your cursor, the Copy to Clipboard feature, **AND** a reliable phone camera. This is the only time your key will be available. Some features don’t work over http, so better safe than sorry. 
+<img width="2048" height="1536" alt="image" src="https://github.com/user-attachments/assets/5895fd83-3357-49f1-bbcf-8759e8c58a30" />
 Go to Environment Variables via the Windows key or some other method.
 <img width="585" height="461" alt="image" src="https://github.com/user-attachments/assets/639bf839-4bb1-447d-b34b-7121c30d4abb" />
 
