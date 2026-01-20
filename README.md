@@ -68,7 +68,8 @@ Read the prompts in **your** command prompt window carefully and you’ll probab
 **Typos** \- two approaches: delete the files and install fresh, or browse the code of the runtime files looking for typos.  
 **Lack of API key** \- the URL cannot be decoded into a file path without access to the server API.  
 ***Debug for lack of API key***: Open command prompt in the user (or working) directory. Copy the contents of the Info radio button, shown below, then open Command Prompt and type py or python immich\_to\_smb.py followed by the string you just copied (for instance python immich\_to\_smb.py /files/zfspics/2013/sliderphone/20130308\_133321.jpg). If it opens successfully, try with a URL. If the URL fails, the issue is probably a missing API key. If so, you will see “IMMICH\_FE\_API\_KEY environment variable not set”.  
-![][image9]  
+<img width="362" height="80" alt="image" src="https://github.com/user-attachments/assets/f54cab9d-e8ff-4ab9-b1a7-f3dba2a01b8d" />
+  
 **AutoHotkey** or script folder **installed** in non-default places \- duh. Most normal users won’t have to worry about this, however. If you still have a 32 bit machine or something and it doesn’t work \- feel free to modify the pathways and give me a PR / message me on Reddit.  
 Attempting to run install scripts **not located** in the user (or working) **directory**.  
 Lack of **software requirements**  
