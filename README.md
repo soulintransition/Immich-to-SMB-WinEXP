@@ -79,15 +79,27 @@ Has not been tested with working directories other than **user folder**. In prin
 
 # Integration details
 
-Append \--print-only to requests in the CLI or in other tools to receive the file path without opening extraneous Explorer windows. 
+Append \--print-only to requests in the CLI or through other tools to receive the file path without opening extraneous Explorer windows. 
 
 The CLI tool can only accept **container filepaths**, **asset IDs**, and **URLs** (the default hotkey input). Names are not a reliable unique identifier in a large photo library spanning multiple folders.
 
 # Example Working Code (runtime)
 
 **Shortcut (ImmichSelect**.lnk**)**  
-Target \= "C:\\Program Files\AutoHotkey\v1.1.37.02\AutoHotkeyU64.exe" C:\Users\\_\_\_\_\\Documents\\AutoHotkey\\ImmichSelect.ahk  
-Start in \= “C:\\Users\\\_\_\_\_\\Documents\\AutoHotkey”
+Target 
+
+```
+
+"C:\\Program Files\AutoHotkey\v1.1.37.02\AutoHotkeyU64.exe" C:\Users\\_\_\_\_\\Documents\\AutoHotkey\\ImmichSelect.ahk
+
+```
+Start in 
+
+```
+
+“C:\\Users\\\_\_\_\_\\Documents\\AutoHotkey”
+
+```
 
 **AHK script (ImmichSelect.ahk)**  
 
