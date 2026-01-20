@@ -86,44 +86,44 @@ The CLI tool can only accept **container filepaths**, **asset IDs**, and **URLs*
 # Example Working Code (runtime)
 
 **Shortcut (ImmichSelect**.lnk**)**  
-Target \= "C:\\Program Files\\AutoHotkey\\v1.1.37.02\\AutoHotkeyU64.exe" C:\\Users\\\_\_\_\_\\Documents\\AutoHotkey\\ImmichSelect.ahk  
+Target \= "C:\\Program Files\AutoHotkey\v1.1.37.02\AutoHotkeyU64.exe" C:\Users\\_\_\_\_\\Documents\\AutoHotkey\\ImmichSelect.ahk  
 Start in \= “C:\\Users\\\_\_\_\_\\Documents\\AutoHotkey”
 
 **AHK script (ImmichSelect.ahk)**  
 
 ```
 
-; Immich → Explorer selector  
-; Hotkey: Ctrl \+ Alt \+ I
+; Immich → Explorer selector
+; Hotkey: Ctrl + Alt + I
 
-^\!i::  
-    ; Save clipboard  
-    ClipSaved := ClipboardAll  
+^!i::
+    ; Save clipboard
+    ClipSaved := ClipboardAll
     Clipboard := ""
 
-    ; Focus address bar  
-    Send ^l  
+    ; Focus address bar
+    Send ^l
     Sleep 60
 
-    Send ^c  
+    Send ^c
     Sleep 60
 
     url := Clipboard
 
-    ; Restore clipboard  
-    Clipboard := ClipSaved  
+    ; Restore clipboard
+    Clipboard := ClipSaved
     ClipSaved := ""
 
-    if (url \= "")  
-    {  
-        SoundBeep, 750  
-        return  
+    if (url = "")
+    {
+        SoundBeep, 750
+        return
     }
 
-    python := "python"  
-    script := "C:\\Users\\\_\_\_\_\_\\immich\_to\_smb.py"
+    python := "python"
+    script := "C:\Users\_____\immich_to_smb.py"
 
-    Run, % python " """ script """ """ url """", , Hide  
+    Run, % python " """ script """ """ url """", , Hide
 return
 
 ```
@@ -132,103 +132,104 @@ return
 
 ```
 
-import os  
-import sys  
-import re  
-import json  
-import urllib.request  
+import os
+import sys
+import re
+import json
+import urllib.request
 import subprocess
 
-IMMICH\_URL \= 'http://192.168.1.x:2283'
+IMMICH_URL = 'http://192.168.1.x:2283'
 
-LIBRARY\_MAP \= {  
-    os.path.normpath('/files/phonepics'): os.path.normpath('E:\\\\AllTimeBackups\\\\2023-present\\\\redactedsmartphone\\\\DCIM'),  
-    os.path.normpath('/files/zfspics'): os.path.normpath('E:\\\\AllTimeBackups'),  
-    os.path.normpath('/data/upload'): os.path.normpath('E:\\\\AllTimeBackups\\\\2023-present\\\\Immich\\\\upload'),  
+LIBRARY_MAP = {
+    os.path.normpath('/files/phonepics'): os.path.normpath('E:\\AllTimeBackups\\2023-present\\redactedsmartphone\\DCIM'),
+    os.path.normpath('/files/zfspics'): os.path.normpath('E:\\AllTimeBackups'),
+    os.path.normpath('/data/upload'): os.path.normpath('E:\\AllTimeBackups\\2023-present\\Immich\\upload'),
 }
 
-UUID\_RE \= re.compile(  
-    r"\[0-9a-fA-F\]{8}-\[0-9a-fA-F\]{4}-\[0-9a-fA-F\]{4}-\[0-9a-fA-F\]{4}-\[0-9a-fA-F\]{12}"  
+UUID_RE = re.compile(
+    r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"
 )
 
-def translate\_immich\_path(immich\_file\_path: str) \-\> str:  
-    immich\_file\_path \= os.path.normpath(immich\_file\_path)
+def translate_immich_path(immich_file_path: str) -> str:
+    immich_file_path = os.path.normpath(immich_file_path)
 
-    for immich\_base, smb\_base in LIBRARY\_MAP.items():  
-        if immich\_file\_path.startswith(immich\_base):  
-            rel \= os.path.relpath(immich\_file\_path, immich\_base)  
-            return os.path.join(smb\_base, rel)
+    for immich_base, smb_base in LIBRARY_MAP.items():
+        if immich_file_path.startswith(immich_base):
+            rel = os.path.relpath(immich_file_path, immich_base)
+            return os.path.join(smb_base, rel)
 
     raise ValueError("Path does not match any configured Immich library")
 
-def extract\_asset\_id(input\_str: str) \-\> str | None:  
-    m \= UUID\_RE.search(input\_str)  
+def extract_asset_id(input_str: str) -> str | None:
+    m = UUID_RE.search(input_str)
     return m.group(0) if m else None
 
-def fetch\_asset\_original\_path(asset\_id: str) \-\> str:  
-    api\_key \= os.environ.get("IMMICH\_FE\_API\_KEY")  
-    if not api\_key:  
-        raise RuntimeError("IMMICH\_FE\_API\_KEY environment variable not set")
+def fetch_asset_original_path(asset_id: str) -> str:
+    api_key = os.environ.get("IMMICH_FE_API_KEY")
+    if not api_key:
+        raise RuntimeError("IMMICH_FE_API_KEY environment variable not set")
 
-    url \= f"{IMMICH\_URL}/api/assets/{asset\_id}"  
-    req \= urllib.request.Request(  
-        url,  
-        headers={"x-api-key": api\_key}  
+    url = f"{IMMICH_URL}/api/assets/{asset_id}"
+    req = urllib.request.Request(
+        url,
+        headers={"x-api-key": api_key}
     )
 
-    with urllib.request.urlopen(req) as resp:  
-        data \= json.load(resp)
+    with urllib.request.urlopen(req) as resp:
+        data = json.load(resp)
 
-    if "originalPath" not in data:  
+    if "originalPath" not in data:
         raise RuntimeError("Asset response missing originalPath")
 
-    return data\["originalPath"\]
+    return data["originalPath"]
 
-def select\_in\_explorer(path: str):  
-    if os.name \!= "nt":  
+def select_in_explorer(path: str):
+    if os.name != "nt":
         raise RuntimeError("Explorer selection is only supported on Windows")
 
-    subprocess.run(  
-        \["explorer.exe", "/select,", os.path.normpath(path)\],  
-        check=False  
+    subprocess.run(
+        ["explorer.exe", "/select,", os.path.normpath(path)],
+        check=False
     )
 
-def main():  
-    args \= sys.argv\[1:\]
+def main():
+    args = sys.argv[1:]
 
-    print\_only \= False  
-    if args and args\[0\] \== "--print-only":  
-        print\_only \= True  
-        args \= args\[1:\]
+    print_only = False
+    if args and args[0] == "--print-only":
+        print_only = True
+        args = args[1:]
 
-    if len(args) \!= 1:  
-        print("Usage:")  
-        print("  py immich\_to\_smb.py \[--print-only\] \<immich path | asset id | immich URL\>")  
+    if len(args) != 1:
+        print("Usage:")
+        print("  py immich_to_smb.py [--print-only] <immich path | asset id | immich URL>")
         sys.exit(1)
 
-    arg \= args\[0\]
+    arg = args[0]
 
-    try:  
-        if arg.startswith("/"):  
-            smb\_path \= translate\_immich\_path(arg)  
-        else:  
-            asset\_id \= extract\_asset\_id(arg)  
-            if not asset\_id:  
+    try:
+        if arg.startswith("/"):
+            smb_path = translate_immich_path(arg)
+        else:
+            asset_id = extract_asset_id(arg)
+            if not asset_id:
                 raise RuntimeError("Input is not a valid Immich path, asset ID, or URL")
 
-            immich\_path \= fetch\_asset\_original\_path(asset\_id)  
-            smb\_path \= translate\_immich\_path(immich\_path)
+            immich_path = fetch_asset_original_path(asset_id)
+            smb_path = translate_immich_path(immich_path)
 
-        print(smb\_path)
+        print(smb_path)
 
-        if not print\_only:  
-            select\_in\_explorer(smb\_path)
+        if not print_only:
+            select_in_explorer(smb_path)
 
-    except Exception as e:  
-        print("Error:", e)  
+    except Exception as e:
+        print("Error:", e)
         sys.exit(2)
 
-if \_\_name\_\_ \== "\_\_main\_\_":  
+if __name__ == "__main__":
     main()
+
 
 ```
