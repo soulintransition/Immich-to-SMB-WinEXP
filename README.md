@@ -60,7 +60,8 @@ If you **already have** Auto Hotkey installed, you will likely have v2 installed
 To enable the hotkey on **login**, your command prompt will tell you to simply enter the powershell command into the command prompt (I didn’t bother going through the whole process again). **Do not** use an actual powershell window. The text of the powershell command is the same, however.
 
 Read the prompts in **your** command prompt window carefully and you’ll probably be fine.  
-![][image8]
+<img width="1462" height="587" alt="image" src="https://github.com/user-attachments/assets/98ae1c4c-64b9-4001-abb5-e78a57add2e7" />
+
 
 # Possible issues
 
@@ -70,6 +71,7 @@ Read the prompts in **your** command prompt window carefully and you’ll probab
 ***Debug for lack of API key***: Open command prompt in the user (or working) directory. Copy the contents of the Info radio button, shown below, then open Command Prompt and type py or python immich\_to\_smb.py followed by the string you just copied (for instance python immich\_to\_smb.py /files/zfspics/2013/sliderphone/20130308\_133321.jpg). If it opens successfully, try with a URL. If the URL fails, the issue is probably a missing API key. If so, you will see “IMMICH\_FE\_API\_KEY environment variable not set”.  
 
 <img width="362" height="80" alt="image" src="https://github.com/user-attachments/assets/f54cab9d-e8ff-4ab9-b1a7-f3dba2a01b8d" />  
+
 **AutoHotkey** or script folder **installed** in non-default places \- duh. Most normal users won’t have to worry about this, however. If you still have a 32 bit machine or something and it doesn’t work \- feel free to modify the pathways and give me a PR / message me on Reddit.  
 Attempting to run install scripts **not located** in the user (or working) **directory**.  
 Lack of **software requirements**  
