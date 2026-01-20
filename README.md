@@ -36,10 +36,10 @@ Go to Environment Variables via the Windows key or some other method.
 *Environment variables are not stored at the file level (\*.py) and therefore slightly more secure against scrapers.*  
 Create a new User Environment Variable IMMICH\_FE\_API\_KEY (exactly that, I already have it), and paste the key. The name is important because it is hard-coded into the script:
 
-<img width="738" height="222" alt="image" src="https://github.com/user-attachments/assets/705f5f74-c9ac-4eed-91cb-9cba3fa095b4" />
+<img width="776" height="406" alt="image" src="https://github.com/user-attachments/assets/01bafe89-0171-449c-9a2c-738d2d9a374e" />
 
 Then click OK at the bottom of the window again.  
-<img width="776" height="406" alt="image" src="https://github.com/user-attachments/assets/01bafe89-0171-449c-9a2c-738d2d9a374e" />
+<img width="738" height="222" alt="image" src="https://github.com/user-attachments/assets/705f5f74-c9ac-4eed-91cb-9cba3fa095b4" />
 
 Now you’re finished with setting up the environment variable. Download the install files and move them to your user folder, or a different working directory (folder) if you’re feeling adventurous. 
 
